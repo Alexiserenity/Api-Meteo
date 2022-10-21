@@ -25,10 +25,21 @@ function start()
       document.getElementById('icon-weather-container').innerHTML = icon;
       document.getElementById('today-forecast-temp').innerHTML = `${temp}°C`;
       
-    })
+    }
+    
+    
+    
+    )
     .catch(function(error) {
       // Affiche une erreur
       console.error(error);
     });
     
 }
+
+
+function text()
+{
+  var input = document.getElementById("city-input").value;
+}
+
