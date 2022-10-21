@@ -1,11 +1,12 @@
 
-// Fonction appelée lors du click du bouton
+// Fonction appelée au lancement du site
 function start() 
 {
   // Création de l'objet apiWeather
   const apiWeather = new API_WEATHER();
-  // Appel de la fonction fetchTodayForecast
+  // Appel par défaut de la strat grace à 'onload'
   apiWeather.onload = function(){start()};
+  // Appel de la fonction fetchTodayForecast
   apiWeather
     .fetchTodayForecast()
     .then(function(response) {
@@ -13,7 +14,7 @@ function start()
       const data = response.data;
 
       // On récupère l'information principal
-      const main = data.weather[0].main;
+      const main = data.weather[0].main;      
       const description = data.weather[0].description;
       const temp = data.main.temp;
       const icon = apiWeather.getHTMLElementFromIcon(data.weather[0].icon);
